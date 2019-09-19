@@ -74,7 +74,7 @@ def my_keyHandler(key):
     else:
             # Mac
         mm = anki.sound.mpvManager
-        if key in "p[]":
+        if key in "[]":
             if audio_replay:
                 play(audio_file)
 
