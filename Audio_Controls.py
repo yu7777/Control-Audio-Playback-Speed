@@ -71,6 +71,16 @@ def my_keyHandler(key):
                     anki.sound.mplayerManager.mplayer.stdin.write(b"af_add scaletempo=stride=10:overlap=0.8\n")
                     anki.sound.mplayerManager.mplayer.stdin.write((b"speed_set %f \n" % audio_speed))
                     anki.sound.mplayerManager.mplayer.stdin.flush()
+    elif platform == "linux":
+            # linux
+        mm = anki.sound.mpvManager
+        if key in "[]" or key == "BS":
+            if audio_replay:
+                play(audio_file)
+
+            elif mm is not None:
+                if mm.command is not None:
+                    mm.command ("keypress", key)
     else:
             # Mac
         mm = anki.sound.mpvManager
@@ -242,6 +252,20 @@ def addKeys(keys):
         #keys.append(("[", lambda: writeAndFlush(b"af_add scaletempo=stride=10:overlap=0.8\nspeed_set %f \n "% 0.5)))
         keys.append(("[", lambda: my_keyHandler("[")))
         keys.append(("]", lambda: my_keyHandler("]")))
+    elif platform == "linux":
+        # linux
+        keys.append(("n", lambda: writeAndFlush(b"pause")))
+        keys.append(("m", lambda: writeAndFlush(b"stop")))
+        keys.append(("5", lambda: writeAndFlush(b"pause")))
+        keys.append(("6", lambda: writeAndFlush(b"seek -5 0")))
+        keys.append(("7", lambda: writeAndFlush(b"seek 5 0")))
+        keys.append(("8", lambda: writeAndFlush(b"stop")))
+        keys.append(("p", lambda: my_keyHandler("p")))
+        keys.append(("[", lambda: my_keyHandler("[")))
+        keys.append(("]", lambda: my_keyHandler("]")))
+        # Press 'backspace' to set speed to normal, but for mpv it should be 'BS'
+        # See 'https://github.com/mpv-player/mpv/blob/master/etc/input.conf' for details
+        keys.append(("backspace", lambda: my_keyHandler("BS")))
     else:
         # Mac
         keys.append(("n", lambda: writeAndFlush(b"pause")))
