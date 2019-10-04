@@ -1,6 +1,8 @@
 # Control-Audio-Playback-Speed.  
 Anki addon https://ankiweb.net/shared/info/1067025219  
-Users can increase audio speed with [ button, decrease audio speed with ]. And set speed to normal with ```backspace``` on Linux.
+Use [ button to increase audio speed.    
+Use ] button to decrease audio speed.      
+And set speed to normal with ```backspace``` .
  
 Orignal Anki addon Control Audio Playback (Extended).  
 https://ankiweb.net/shared/info/1413404470   
