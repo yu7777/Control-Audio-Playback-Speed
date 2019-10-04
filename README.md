@@ -4,8 +4,8 @@ Users can increase audio speed with [ button, decrease audio speed with ]. And s
  
 Orignal Anki addon Control Audio Playback (Extended).  
 https://ankiweb.net/shared/info/1413404470   
-Orignal addon can't adjust audio speed on Mac.
-I modified Audio_Controls.py so that it can work on Mac.
+Orignal addon can't adjust audio speed on Mac.    
+I modified Audio_Controls.py so that it can work on Mac.    
 Anki use mpv on both Mac and Linux, so this addon should also work on Linux
 
 ### For mpv    
