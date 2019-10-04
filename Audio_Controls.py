@@ -242,7 +242,7 @@ def addKeys(keys):
         #keys.append(("[", lambda: writeAndFlush(b"af_add scaletempo=stride=10:overlap=0.8\nspeed_set %f \n "% 0.5)))
         keys.append(("[", lambda: my_keyHandler("[")))
         keys.append(("]", lambda: my_keyHandler("]")))
-    
+
     else:
         # Mac and linux
         keys.append(("n", lambda: writeAndFlush(b"pause")))
